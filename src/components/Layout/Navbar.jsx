@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import UserProfile from '../Profile/UserProfile';
 import Button from '../UI/Button';
 import logo from '../../assets/sharebite logo.png';
 import './Navbar.css';
@@ -10,8 +9,6 @@ const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const [showProfile, setShowProfile] = useState(false);
-
 
   const handleLogout = () => {
     logout();
@@ -94,15 +91,16 @@ const Navbar = () => {
           <div className="nav-actions">
             {isAuthenticated() ? (
               <>
-                <button 
-                  className="action-btn profile-btn"
-                  onClick={() => setShowProfile(true)}
+                <Link 
+                  to="/profile" 
+                  className="action-btn profile-link"
                   title="Profile"
                 >
                   <div className="user-avatar">
                     {user?.firstName ? user.firstName.charAt(0).toUpperCase() : user?.username?.charAt(0).toUpperCase() || 'U'}
                   </div>
-                </button>
+                  <span className="profile-text">Profile</span>
+                </Link>
                 
                 <button 
                   className="action-btn logout-btn"
@@ -129,12 +127,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
-      {/* Profile Modal */}
-      <UserProfile 
-        isOpen={showProfile} 
-        onClose={() => setShowProfile(false)} 
-      />
     </>
   );
 };

@@ -25,6 +25,9 @@ import AssignTask from './components/Volunteers/AssignTask';
 // Admin Components
 import UserManagement from './components/Admin/UserManagement';
 
+// Profile Component
+import UserProfile from './components/Profile/UserProfile';
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -39,6 +42,16 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute>
             <Dashboard />
+          </ProtectedRoute>
+        } 
+      />
+
+      {/* Profile Route */}
+      <Route 
+        path="/profile" 
+        element={
+          <ProtectedRoute>
+            <UserProfile isStandalone={true} />
           </ProtectedRoute>
         } 
       />

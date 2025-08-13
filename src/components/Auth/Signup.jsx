@@ -9,6 +9,8 @@ const Signup = () => {
     email: '',
     password: '',
     confirmPassword: '',
+    fullName: '',
+    address: '',
     role: 'RECEIVER' // Default role
   });
   const [loading, setLoading] = useState(false);
@@ -148,6 +150,40 @@ const Signup = () => {
               onChange={handleChange}
               className="form-control"
               placeholder="Enter your email"
+              required
+              disabled={loading}
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="fullName" className="form-label">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Enter your full name"
+              required
+              disabled={loading}
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="address" className="form-label">
+              Address
+            </label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Enter your address"
               required
               disabled={loading}
             />
