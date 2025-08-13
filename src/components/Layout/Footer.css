@@ -1,0 +1,151 @@
+/* Footer Styles */
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+.footer-icon {
+  font-size: 28px;
+}
+
+.footer-description {
+  color: #adb5bd;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #f8f9fa;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-link {
+  color: #adb5bd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.social-link:hover {
+  color: #28a745;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid #495057;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-copyright p {
+  margin: 5px 0;
+  color: #adb5bd;
+  font-size: 14px;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 30px 15px 15px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .footer-title {
+    justify-content: center;
+  }
+  
+  .footer-social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 20px;
+  }
+  
+  .footer-subtitle {
+    font-size: 16px;
+  }
+  
+  .footer-description {
+    font-size: 14px;
+  }
+}

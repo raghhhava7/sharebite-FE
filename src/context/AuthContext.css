@@ -1,0 +1,70 @@
+/* AuthContext related styles */
+.auth-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 18px;
+  color: #666;
+  background-color: #f8f9fa;
+}
+
+.auth-error {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-role {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.user-role.donor {
+  background-color: #28a745;
+}
+
+.user-role.receiver {
+  background-color: #17a2b8;
+}
+
+.user-role.volunteer {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.user-role.admin {
+  background-color: #dc3545;
+}
+
+.user-welcome {
+  font-size: 14px;
+  color: #495057;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.logout-btn:hover {
+  color: #c82333;
+}

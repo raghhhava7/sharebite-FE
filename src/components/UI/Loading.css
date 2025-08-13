@@ -1,0 +1,138 @@
+/* Professional Loading Component */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 70000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.loading-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner-ring {
+  position: absolute;
+  border: 3px solid var(--color-navy-light);
+  border-top: 3px solid var(--color-navy);
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+.loading-logo {
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-message {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-navy);
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+/* Size Variations */
+.loading-small .loading-spinner-ring {
+  width: 60px;
+  height: 60px;
+}
+
+.loading-small .loading-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.loading-small .loading-message {
+  font-size: 14px;
+}
+
+.loading-medium .loading-spinner-ring {
+  width: 80px;
+  height: 80px;
+}
+
+.loading-medium .loading-logo {
+  width: 56px;
+  height: 56px;
+}
+
+.loading-large .loading-spinner-ring {
+  width: 100px;
+  height: 100px;
+}
+
+.loading-large .loading-logo {
+  width: 72px;
+  height: 72px;
+}
+
+.loading-large .loading-message {
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .loading-content {
+    gap: 20px;
+  }
+  
+  .loading-medium .loading-spinner-ring {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .loading-medium .loading-logo {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .loading-message {
+    font-size: 15px;
+  }
+}
